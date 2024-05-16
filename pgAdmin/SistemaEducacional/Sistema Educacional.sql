@@ -257,7 +257,8 @@ SELECT * FROM cursos_disciplinas
 --Perguntas
 
 --Dado o RA ou o Nome do Aluno, buscar no BD todos os demais dados do aluno.
-SELECT * FROM alunos WHERE nome_aluno = 'Ana Pereira';
+SELECT * FROM (matriculas INNER JOIN alunos USING (cpf)) INNER JOIN contatos USING (cpf) 
+WHERE nome_aluno = 'Fernanda Oliveira';
 
 
 --Dado o nome de um departamento, exibir o nome de todos os cursos associados a ele.
