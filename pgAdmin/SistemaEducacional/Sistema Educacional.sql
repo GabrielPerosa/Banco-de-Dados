@@ -283,10 +283,9 @@ WHERE matriculas.cpf = '551.654.987-32';
 
 --Filtrar todos os alunos matriculados em um determinado curso.
 
-SELECT alunos.* FROM alunos 
-INNER JOIN matriculas ON alunos.cpf = matriculas.cpf 
-WHERE matriculas.id_curso = 28;
-
+SELECT nome_aluno, status FROM (cursos NATURAL INNER JOIN matriculas)
+                NATURAL INNER JOIN alunos
+WHERE nome_curso='Enfermagem'
 
 --Filtrar todos os alunos matriculados em determinada disciplina.
 
