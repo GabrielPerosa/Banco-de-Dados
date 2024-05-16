@@ -297,11 +297,11 @@ WHERE disciplinas.nome_disciplina = 'Engenharia Sustentável';
 
 
 --Filtrar alunos formados.
-SELECT * FROM alunos WHERE cpf IN (SELECT cpf FROM matriculas WHERE status = 'formado');
+SELECT nome_aluno FROM alunos WHERE cpf IN (SELECT cpf FROM matriculas WHERE status = 'formado');
 
 
 --Filtrar alunos ativos.
-SELECT * FROM alunos WHERE cpf IN (SELECT cpf FROM matriculas WHERE status = 'cursando');
+SELECT nome_aluno FROM alunos WHERE cpf IN (SELECT cpf FROM matriculas WHERE status = 'cursando');
 
 
 --Apresentar a quantidade de alunos ativos por curso.
